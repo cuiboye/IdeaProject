@@ -241,7 +241,7 @@ public class UserEntityController {
                 bean.setName("贼有钱的一个账户");
                 bean.setBalance("161961.96");
             }
-            
+
             listCompanyVO.add(bean);
         }
 
