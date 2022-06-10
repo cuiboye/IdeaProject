@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CSS-Float(浮动)</title>
+    <style>
+        body{
+            height: 100px;
+            width: 300px;
+        }
+        img {
+            float: right;
+        }
+        .thumbnail
+        {
+            float:left;
+            width:110px;
+            height:90px;
+            margin:5px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div>
+    <p>在下面的段落中，我们添加了一个 <b>float:right</b> 的图片。导致图片将会浮动在段落的右边。</p>
+    <p>
+        <img src="image.jpeg" width="95" height="84"/>
+        这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。
+    </p>
+    <p>彼此相邻的浮动元素---试着调整窗口,看看当图片没有足够的空间会发生什么。</p>
+    <img class="thumbnail" src="image.jpeg" width="107" height="90">
+    <img class="thumbnail" src="image.jpeg" width="107" height="80">
+    <img class="thumbnail" src="image.jpeg" width="116" height="90">
+    <img class="thumbnail" src="image.jpeg" width="120" height="90">
+    <img class="thumbnail" src="image.jpeg" width="107" height="90">
+    <img class="thumbnail" src="image.jpeg" width="107" height="80">
+    <img class="thumbnail" src="image.jpeg" width="116" height="90">
+    <img class="thumbnail" src="image.jpeg" width="120" height="90">
+</div>
+</body>
+
+</html>

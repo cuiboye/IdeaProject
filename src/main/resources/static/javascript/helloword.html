@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <script src="myjavascript.js"></script>
+</head>
+<body>
+<script>
+    function myFunction(){
+        x = document.getElementById("demo");
+        x.innerText = "JavaScript 能改变 HTML 元素的内容。"
+    }
+    function add(){
+        document.getElementById("add").innerHTML = (5+6)+"";
+    }
+    function getObject(){
+        var person={firstname:"John", lastname:"Doe", id:5566};
+        //以下两种方式都可以获取对象
+        // document.getElementById("obj").innerHTML = person.firstname;
+        document.getElementById("obj").innerHTML = person["firstname"];
+    }
+</script>
+
+
+<h1>我的第一个 JavaScript 程序</h1>
+<p id="demo">这是一个段落</p>
+
+<button type="button" onClick="alert('欢迎!')">点我!</button>
+
+<button type="button" onclick="myFunction()">点击这里</button>
+
+<!--
+element.src.match("bulbon") 的作用意思是：检索 <img id="myimage" onclick="changeImage()" src="/images/pic_bulboff.gif"
+width="100" height="180"> 里面 src 属性的值有没有包含 bulbon 这个字符串，如果存在字符串 bulbon，图片 src 更新为 bulboff.gif，若匹配
+不到 bulbon 字符串，src 则更新为 bulbon.gif
+-->
+<div>
+    <img id="myimage" onclick="changeImage()" src="pic_bulboff.gif" width="100" height="180">
+    <p>点击灯泡就可以打开或关闭这盏灯</p>
+</div>
+<div>
+    <p id="changecolor">改变文字颜色</p>
+    <button type="button" onclick="changeColor()">改变文字颜色</button>
+</div>
+
+
+<div>
+    <p id="add">字面表达式</p>
+    <button type="button" onclick="add()">计算5+6的结果</button>
+</div>
+<div>
+    <p id="obj">对象简单操作</p>
+    <button type="button" onclick="getObject()">获取对象的属性</button>
+</div>
+</body>
+</html>

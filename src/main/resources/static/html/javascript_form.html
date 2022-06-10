@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+</head>
+<body>
+<!--
+ action="demo_form.php"
+ 这里应该是提交后跳转到了一个新的页面，但是这个页面是如何接受值的还需要研究
+ -->
+<script>
+    function validateForm() {
+        var x = document.forms["myForm"]["fname"].value;
+        if (x == null || x == "") {
+            alert("需要输入名字。");
+            return false;
+        }
+        var xhr = new XMLHttpRequest();
+
+        xhr.onload = function () {
+            // 输出接收到的文字数据
+            document.getElementById("demo").innerHTML=xhr.responseText;
+        }
+
+        xhr.onerror = function () {
+            document.getElementById("demo").innerHTML="请求出错";
+        }
+        // 发送异步 GET 请求
+        xhr.open("GET", "http://192.168.5.205:8082/danyuan/login?username=sdf", true);
+        xhr.send();
+    }
+</script>
+<form name="myForm" action="helloword.html"
+      onsubmit="return validateForm()" method="post">
+    名字: <input type="text" name="fname">
+    <input type="submit" value="提交">
+</form>
+
+</body>
+</html>

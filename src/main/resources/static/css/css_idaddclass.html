@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="CSS中使用id和class">
+    <style type="text/css">
+        body{
+            background-color:#fff;
+        }
+        h1{
+            color: orange;
+            text-align: center;
+        }
+        /**
+            设置所有为p的都为这个样式
+         */
+        /*p{*/
+        /*    font-family: "Times New Roman";*/
+        /*    font-size: 20px;*/
+        /*}*/
+        /**
+            指定具体某个对象的id为para1，它将拥有这个样式
+         */
+        #para1{
+            font-family: "Times New Roman";
+            font-size: 20px;
+        }
+        /**
+            所有拥有class属性为center的对象都会居中
+         */
+        .center{
+            text-align: center;
+        }
+        /**
+        指定某中类型的元素为center1这个样式
+         */
+        p.center1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>这是一个标题</h1>
+    <p id="para1">这是一个段落</p>
+    <p>这个段落不受样式的影响</p>
+
+    <p class="center">段落居中</p>
+    <p class="center1">使用class属性，这是一个指定特定样式的元素,其他使用了center1的元素如h1则不会生效</p>
+</body>
+
+</html>

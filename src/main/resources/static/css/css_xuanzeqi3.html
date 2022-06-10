@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CSS-组合选择器-相邻兄弟选择器</title>
+    <style>
+        div+p
+        {
+            background-color:yellow;
+        }
+    </style>
+</head>
+<body>
+<!--相邻兄弟选择器（Adjacent sibling selector）可选择紧接在另一元素后的元素，且二者有相同父元素。
+如果需要选择紧接在另一个元素后的元素，而且二者有相同的父元素，可以使用相邻兄弟选择器（Adjacent sibling selector）。
+以下实例选取了所有位于 <div> 元素后的第一个 <p> 元素: -->
+<h1>文章标题</h1>
+
+<div>
+    <h2>DIV 内部标题</h2>
+    <p>DIV 内部段落。</p>
+</div>
+
+<p>DIV 之后的第一个 P 元素。</p>
+
+<p>DIV 之后的第二个 P 元素。</p>
+
+</body>
+</html>

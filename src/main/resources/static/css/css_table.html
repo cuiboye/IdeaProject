@@ -1,0 +1,113 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Table表格</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        table.collapse {
+            border-collapse: collapse;
+        }
+
+        table.width {
+            width: 100%;
+        }
+
+        th.height {
+            height: 50px;
+        }
+        td.text-align {
+            text-align:right;
+        }
+        td.vertical-align {
+            height: 50px;
+            vertical-align:bottom;
+        }
+        td.padding {
+            padding: 15px;
+        }
+        td.background {
+            background-color:green;
+            color:white;
+        }
+    </style>
+</head>
+
+<body>
+<!-- 指定CSS表格边框，使用border属性。默认的这种表格是有表格有双边框的 -->
+<p>默认表格</p>
+<table>
+    <tr>
+        <th>FirstName</th>
+        <th>LastName</th>
+    </tr>
+    <tr>
+        <td>Peter</td>
+        <td>Griffin</td>
+    </tr>
+    <tr>
+        <td>Lois</td>
+        <td>Griffin</td>
+    </tr>
+</table>
+<!-- 设置border-collapse属性为collapse，可以去除双边框 -->
+<p>单边框表格</p>
+<table class="collapse">
+    <tr>
+        <th>FirstName</th>
+        <th>LastName</th>
+    </tr>
+    <tr>
+        <td>Peter</td>
+        <td>Griffin</td>
+    </tr>
+    <tr>
+        <td>Lois</td>
+        <td>Griffin</td>
+    </tr>
+</table>
+<p>设置表格高度和宽度</p>
+<table class="width">
+    <tr>
+        <th class="height">FirstName</th>
+        <th class="height">LastName</th>
+    </tr>
+    <tr>
+        <td>Peter</td>
+        <td>Griffin</td>
+    </tr>
+    <tr>
+        <td>Lois</td>
+        <td>Griffin</td>
+    </tr>
+</table>
+
+<!-- text-align属性设置水平对齐方式，向左，右，或中心：-->
+<!-- vertical-align垂直对齐属性设置垂直对齐，比如顶部，底部或中间：-->
+<!-- 如需控制边框和表格内容之间的间距，应使用td和th元素的填充属性：padding-->
+<!-- 如需控制边框和表格内容之间的间距，应使用td和th元素的填充属性：padding-->
+<!-- background-color:green;color:white; 设置背景和字体颜色-->
+
+<p>表格文字对齐</p>
+<table class="width">
+    <tr>
+        <th class="height">FirstName</th>
+        <th class="height">LastName</th>
+    </tr>
+    <tr>
+        <td class="text-align">Peter</td>
+        <td  class="text-align">Griffin</td>
+    </tr>
+    <tr>
+        <td  class="vertical-align">Lois</td>
+        <td  class="vertical-align">Griffin</td>
+    </tr>
+    <tr>
+        <td  class="padding">Lois</td>
+        <td  class="background">Griffin</td>
+    </tr>
+</table>
+</body>
+</html>

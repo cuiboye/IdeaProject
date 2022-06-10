@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CSS-Dimension</title>
+    <style>
+        p.normal {
+            height: auto;
+        }
+
+        p.big {
+            height: 120px;
+        }
+
+        p.ex {
+            height: 100px;
+            width: 100px;
+        }
+
+        img.normal {
+            height: auto;
+        }
+
+        img.big {
+            height: 50%;
+        }
+
+        img.small {
+            height: 10%;
+        }
+        p.max-height {
+            max-height:70px;
+            background-color:yellow;
+        }
+        p.max-width
+        {
+            max-width:20%;
+            background-color:yellow;
+        }
+        p.min-height{
+            min-height:100px;
+            background-color:yellow;
+        }
+        p.min-width
+        {
+            min-width:150px;
+            background-color:yellow;
+        }
+    </style>
+</head>
+
+<body>
+<p>设置元素的宽高</p>
+<p class="normal">这个段落的高是 auto.</p>
+<p class="big">这个段落的高是 120px.</p>
+<p class="ex">这个段落的高和宽都是 100px.</p>
+
+<p>使用百分比设置图像的高度,这里不知道为什么没有设置成功</p>
+<img class="normal" src="ic_list_price_up.png" width="95" height="84"/><br>
+<img class="big" src="ic_list_price_up.png" width="95" height="84"/><br>
+<img class="small" src="ic_list_price_up.png" width="95" height="84"/>
+
+<p>设置元素的最大高度</p>
+<p class="max-height">本段落的最大高度被设置为 50px。 本段落的最大高度被设置为 50px。本段落的最大高度被设置为 50px。本段落的最大高度被设置为 50px。本段落的最大高度被设置为 50px。本段落的最大高度被设置为 50px。本段落的最大高度被设置为 50px。本段落的最大高度被设置为 50px。本段落的最大高度被设置为 50px。本段落的最大高度被设置为 50px。本段落的最大高度被设置为 50px。本段落的最大高度被设置为 50px。本段落的最大高度被设置为 50px。本段落的最大高度被设置为 50px。本段落的最大高度被设置为 50px。本段落的最大高度被设置为 50px。本段落的最大高度被设置为 50px。本段落的最大高度被设置为 50px。本段落的最大高度被设置为 50px。本段落的最大高度被设置为 50px。本段落的最大高度被设置为 50px。</p>
+
+<p>使用百分比来设置元素的最大宽度</p>
+<p class="max-width">This is some text. This is some text. This is some text.
+    This is some text. This is some text. This is some text.
+    This is some text. This is some text. This is some text.</p>
+
+<p>设置元素的最低高度</p>
+<p class="min-height">这段的最小高度设置为100 px。</p>
+
+<p>设置元素的最小宽度</p>
+<p class="min-width">这个段落的最小宽度设置为 150px。</p>
+
+</body>
+
+</body>
+</html>

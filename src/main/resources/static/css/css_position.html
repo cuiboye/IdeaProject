@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CSS-Position属性</title>
+
+    <style>
+        body{
+            height: 2000px;
+        }
+        p.static {
+            position: static;
+            border: 3px solid #73AD21;
+        }
+        p.pos_fixed
+        {
+            position:fixed;
+            top:30px;
+            right:5px;
+        }
+        p.pos_right
+        {
+            position:relative;
+            left:20px;
+        }
+        p.absolute
+        {
+            position:absolute;
+            left:100px;
+            top:150px;
+        }
+        p.sticky {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            padding: 5px;
+            background-color: #cae8ca;
+            border: 2px solid #4CAF50;
+        }
+        img
+        {
+            position:absolute;
+            clip:rect(0px,60px,200px,0px);
+        }
+
+        div.ex1 {
+            background-color: lightblue;
+            width: 110px;
+            height: 110px;
+            overflow: scroll;
+        }
+
+        div.ex2 {
+            background-color: lightblue;
+            width: 110px;
+            height: 110px;
+            overflow: hidden;
+        }
+
+        div.ex3 {
+            background-color: lightblue;
+            width: 110px;
+            height: 110px;
+            overflow: auto;
+        }
+
+        div.ex4 {
+            background-color: lightblue;
+            width: 110px;
+            height: 110px;
+            overflow: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <!--position 属性的五个值：
+    static：HTML 元素的默认值，即没有定位，遵循正常的文档流对象。静态定位的元素不会受到 top, bottom, left, right影响。
+    relative：相对定位元素的定位是相对其正常位置。
+    fixed：元素的位置相对于浏览器窗口是固定位置。即使窗口是滚动的它也不会移动：
+    absolute:绝对定位的元素的位置相对于最近的已定位父元素，如果元素没有已定位的父元素，那么它的位置相对于<html>
+    sticky:基于用户的滚动位置来定位。粘性定位的元素是依赖于用户的滚动，在 position:relative 与 position:fixed 定位之间切换。
+    它的行为就像 position:relative; 而当页面滚动超出目标区域时，它的表现就像 position:fixed;，它会固定在目标位置。
+    元素定位表现为在跨越特定阈值前为相对定位，之后为固定定位。
+    这个特定阈值指的是 top, right, bottom 或 left 之一，换言之，指定 top, right, bottom 或 left 四个阈值其中之一，才可使粘性定位生效。否则其行为与相对定位相同。
+    -->
+    <p class="static">static：元素的默认值，即没有定位，遵循正常的文档流对象。静态定位的元素不会受到 top, bottom, left, right影响。</p>
+    <p class="pos_fixed">pos_fixed：元素的位置相对于浏览器窗口是固定位置。即使窗口是滚动的它也不会移动：</p>
+    <p class="pos_right">pos_right：相对定位元素的定位是相对其正常位置。</p>
+    <p class="absolute">absolute</p>
+    <p class="sticky">sticky</p>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <p>裁剪元素的外形:</p>
+    <img src="image.jpeg" width="100" height="140" />
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <p>如果元素中的内容超出了给定的宽度和高度属性，overflow 属性可以确定是否显示滚动条等行为。</p>
+    <h2>overflow: scroll:</h2>
+    <div class="ex1">菜鸟教程 -- 学的不仅是技术，更是梦想！！！菜鸟教程 -- 学的不仅是技术，更是梦想！！！菜鸟教程 -- 学的不仅是技术，更是梦想！！！菜鸟教程 -- 学的不仅是技术，更是梦想！！！</div>
+    <h2>overflow: hidden:</h2>
+    <div class="ex2">菜鸟教程 -- 学的不仅是技术，更是梦想！！！菜鸟教程 -- 学的不仅是技术，更是梦想！！！菜鸟教程 -- 学的不仅是技术，更是梦想！！！菜鸟教程 -- 学的不仅是技术，更是梦想！！！</div>
+    <h2>overflow: auto:</h2>
+    <div class="ex3">菜鸟教程 -- 学的不仅是技术，更是梦想！！！菜鸟教程 -- 学的不仅是技术，更是梦想！！！菜鸟教程 -- 学的不仅是技术，更是梦想！！！菜鸟教程 -- 学的不仅是技术，更是梦想！！！</div>
+    <h2>overflow: visible (默认):</h2>
+    <div class="ex4">菜鸟教程 -- 学的不仅是技术，更是梦想！！！菜鸟教程 -- 学的不仅是技术，更是梦想！！！菜鸟教程 -- 学的不仅是技术，更是梦想！！！菜鸟教程 -- 学的不仅是技术，更是梦想！！！</div>
+
+    <p>更改光标----请把鼠标移动到单词上，可以看到鼠标指针发生变化：</p>
+    <span style="cursor:auto">auto</span><br>
+    <span style="cursor:crosshair">crosshair</span><br>
+    <span style="cursor:default">default</span><br>
+    <span style="cursor:e-resize">e-resize</span><br>
+    <span style="cursor:help">help</span><br>
+    <span style="cursor:move">move</span><br>
+    <span style="cursor:n-resize">n-resize</span><br>
+    <span style="cursor:ne-resize">ne-resize</span><br>
+    <span style="cursor:nw-resize">nw-resize</span><br>
+    <span style="cursor:pointer">pointer</span><br>
+    <span style="cursor:progress">progress</span><br>
+    <span style="cursor:s-resize">s-resize</span><br>
+    <span style="cursor:se-resize">se-resize</span><br>
+    <span style="cursor:sw-resize">sw-resize</span><br>
+    <span style="cursor:text">text</span><br>
+    <span style="cursor:w-resize">w-resize</span><br>
+    <span style="cursor:wait">wait</span><br>
+</body>
+
+</body>
+</html>

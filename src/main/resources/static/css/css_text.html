@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="CSS中使用id和class">
+    <style type="text/css">
+        body{
+            background-color:#fff;
+        }
+        /**
+          text-align: center 标题居中
+          text-decoration: overline;在文本上方加一条线
+         */
+        h1{
+            color: orange;
+            text-align: center;
+            text-decoration: overline;
+        }
+        /**
+         text-align: center 标题靠右
+         text-decoration: overline;在文本中间加一条线，类似与删除线
+        */
+        p.date{
+            color: blue;
+            text-align: right;
+            text-decoration: line-through;
+        }
+        /**
+         text-align: center 两侧对齐
+         text-decoration: underline;在文本下方加一条线
+         text-indent: 50px  首行缩进
+        */
+        p.main{
+            color: blue;
+            text-align: justify;
+            text-decoration: underline;
+            text-indent: 50px;
+        }
+        /**
+         text-decoration 属性用来设置或删除文本的装饰。 从设计的角度看 text-decoration属性主要是用来删除链接的下划线
+         */
+        a{
+            text-decoration: none;
+        }
+        p.uppercase {text-transform:uppercase;}
+        p.lowercase {text-transform:lowercase;}
+        p.capitalize {text-transform:capitalize;}
+
+        /**
+            letter-spacing:指定文本之间的宽度
+         */
+        p.spacing1{
+            letter-spacing: 2px;
+        }
+        p.spacing2{
+            letter-spacing: -3px;
+        }
+        p.line_height1{
+            line-height: 70%;
+        }
+        p.line_height2{
+            line-height: 200%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>标题居中</h1>
+    <p class="date">2022年5月20日</p>
+    <p class="main">当我年轻的时候，我梦想改变这个世界；当我成熟以后，我发现我不能够改变这个世界，我将目光缩短了些，决定只改变我的国家；当我进入暮年以后，我发现我不能够改变我们的国家，我的最后愿望仅仅是改变一下我的家庭，但是，这也不可能。当我现在躺在床上，行将就木时，我突然意识到：如果一开始我仅仅去改变我自己，然后，我可能改变我的家庭；在家人的帮助和鼓励下，我可能为国家做一些事情；然后，谁知道呢?我甚至可能改变这个世界。”</p>
+    <p>链接到：<a href="www.baidu.com">百度</a></p>
+
+    <p style="color: blue">大小写转换</p>
+    <p>全部转化为大写 </p><p class="uppercase"> This is some text</p>
+    <p>全部转化为小写 </p><p class="lowercase"> This is some text</p>
+    <p>每个单词的首字母转化为大写 </p><p class="capitalize"> This is some text</p>
+
+    <p style="color: blue">设置文本间距</p>
+    <p class="spacing1">这个文本的间距为2px</p>
+    <p class="spacing2">这个文本的间距为-3px</p>
+
+    <br/>
+    <p style="color: blue">设置行高</p>
+    <p>这是一个标准行高的段落，大多数浏览器的默认行高是110%至120%</p>
+    <p>这是一个标准行高的段落，大多数浏览器的默认行高是110%至120%</p>
+    <p class="line_height1">这是一个更小行高的段落</p>
+    <p class="line_height1">这是一个更小行高的段落</p>
+    <p class="line_height2">这是一个更大行高的段落</p>
+    <p class="line_height2">这是一个更大行高的段落</p>
+
+    <br/>
+    <p style="color: blue">书写方向</p>
+    <p>文本默认的书写方向</p>
+    <p style="direction: rtl">文本书写方向为从右到左</p>
+
+    <br/>
+    <p style="color: blue">设置单词之间的空白空间</p>
+    <p style="word-spacing: 30px">This is some text. This is some text.这个属性对中文无效</p>
+
+    <!-- white-space: 默认是normal，表示合并空格，多个相邻空格合并成一个空格 -->
+    <!-- white-space:nowrap 和normal一样，也合并空格，但是不会根据容器大小换行，表示不换行。-->
+    <!-- white-space:pre 保留空格不换行-->
+    <!-- white-space:pre-wrap 保留空格换行-->
+    <!-- white-space:pre-line 合并空格换行，换行和white-space:pre-wrap一样，碰到容器的边界也会换行。-->
+    <!-- white-space:pre-wrap和white-space:pre的区别就是会自适应容器的边界进行换行。-->
+    <br/>
+    <p style="color: blue">text的white-space属性</p>
+    <p style="white-space: normalpx">
+        这是一些文本。这是一些文本。这是一些文本。 这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。这是一些文本。这是一些文本。</p>
+
+    <br/>
+    <p style="color: blue">文本阴影展示</p>
+    <p style="text-shadow:2px 2px #FF0000">文本阴影</p>
+
+    <!-- font-family 属性应该设置几个字体名称作为一种"后备"机制，如果浏览器不支持第一种字体，他将尝试下一种字体。
+    注意: 如果字体系列的名称超过一个字，它必须用引号，如Font Family："宋体"。
+    多个字体系列是用一个逗号分隔指明： -->
+    <br/>
+    <p style="color: blue">字体系列</p>
+    <p style="font-family:'Baoli SC','Times New Roman',Times">设置字体样式</p>
+
+    <!-- font-style:
+     normal正常显示的文本
+     italic斜体
+     oblique斜体-->
+    <!-- font-size 字体大小,可以设置px和百分比，浏览器中默认字体大小是16px-->
+    <br/>
+    <p style="color: blue">字体样式</p>
+    <p style="font-style:oblique;font-size: 30px">设置字体样式和大小</p>
+    <p style="font-style:oblique;font-size: 50%">设置字体样式和大小</p>
+
+    <!-- font-weight:字体的粗细
+    normal 正常字体
+    lighter  明亮的字体
+    bold 加粗字体
+    也可以通过数组来进行加粗
+     -->
+    <br/>
+    <p style="color: blue">设置字体加粗</p>
+    <p style="font-weight: normal">设置加粗样式normal</p>
+    <p style="font-weight: lighter">设置加粗样式lighter</p>
+    <p style="font-weight: bold">设置加粗样式bold</p>
+    <p style="font-weight: 900">设置加粗样式 900</p>
+
+    <!-- font-variant:
+    normal默认的
+    small-caps 小型大写字母的字体
+    -->
+    <br/>
+    <p style="color: blue">设置字体的转变</p>
+    <p style="font-variant: normal">My name is Hege Refsnes.</p>
+    <p style="font-variant: small-caps">My name is Hege Refsnes.</p>
+</body>
+</html>

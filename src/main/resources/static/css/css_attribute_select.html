@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CSS-属性选择器</title>
+    <style>
+        [title]{
+            color: blue;
+        }
+        [title=runoob]{
+            color: blue;
+        }
+        [title~=hello] {
+            color:red;
+        }
+        [lang|=en] {
+            color:orange;
+        }
+
+        input[type="text"]
+        {
+            width:150px;
+            display:block;
+            margin-bottom:10px;
+            background-color:yellow;
+        }
+        input[type="button"]
+        {
+            width:120px;
+            margin-left:35px;
+            display:block;
+        }
+    </style>
+</head>
+<body>
+<!--
+1）下面的例子是把包含标题（title）的所有元素变为蓝色
+        [title]{
+            color: blue;
+        }
+-->
+<h1>这是一个标题</h1>
+<h1 title="标题">这是一个标题</h1>
+<!--
+2）下面的实例改变了标题title='runoob'元素的边框样式
+        [title = runoob]{
+            color: blue;
+        }
+-->
+<a class="runoob" href="http://www.runoob.com/">runoob</a>
+<!--
+3）下面是包含指定值的title属性的元素样式的例子，使用（~）分隔属性和值
+        [title ～= runoob]{
+            color: red;
+        }
+-->
+<h2>下面是包含指定值的title属性的元素样式的例子，使用（~）分隔属性和值,将适用:</h2>
+<h1 title="hello world">Hello world</h1>
+<p title="student hello">Hello CSS students!</p>
+<hr>
+<h2>将不适用:</h2>
+<p title="student">Hi CSS students!</p>
+
+<!--
+下面是包含指定值的lang属性的元素样式的例子，使用（|）分隔属性和值:
+        [lang|=en] {
+            color:orange;
+        }
+-->
+<h2>将适用:</h2>
+<p lang="en">Hello!</p>
+<p lang="en-us">Hi!</p>
+<p lang="en-gb">Ello!</p>
+<hr>
+<h2>将不适用:</h2>
+<p lang="us">Hi!</p>
+<p lang="no">Hei!</p>
+
+<!--
+属性选择器样式无需使用class或id的形式:
+        input[type="text"]
+        {
+            width:150px;
+            display:block;
+            margin-bottom:10px;
+            background-color:yellow;
+        }
+        input[type="button"]
+        {
+            width:120px;
+            margin-left:35px;
+            display:block;
+        }
+-->
+<form name="input" action="demo-form.php" method="get">
+    Firstname:<input type="text" name="fname" value="Peter" size="20">
+    Lastname:<input type="text" name="lname" value="Griffin" size="20">
+    <input type="button" value="Example Button">
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>javascript-对象</title>
+    <script src="objectscript.js"></script>
+</head>
+<!-- onload 只能在body中使用，一旦完全加载所有内容（包括图像、脚本文件、CSS 文件等），就执行一段脚本。-->
+<body onload="alert('页面加载完成')">
+<script>
+    myFunction();
+
+    function myFunction()
+    {
+        carName = "Volvo";
+    }
+    function getMyFunction(){
+        document.getElementById("person2").innerText =
+            "我可以显示 " + window.carName;
+        var x = 0;
+        if(x){
+            console.log("1")
+        }else {
+            console.log("2")
+        }
+        var x = document.forms["myForm"]["fname"].value;
+    }
+</script>
+<div>
+    <p id="person">hello</p>
+    <button type="button" onclick="getPersonFullName()">获取对象方法</button>
+</div>
+<!--
+JavaScript事件处理：
+onchange	HTML 元素改变
+onclick	用户点击 HTML 元素
+onmouseover	鼠标指针移动到指定的元素上时发生
+onmouseout	用户从一个 HTML 元素上移开鼠标时发生
+onkeydown	用户按下键盘按键
+onload	浏览器已完成页面的加载
+-->
+<div>
+    <button type="button" onclick="updatePerson('zhang','san',)">函数参数的传递-设置参数</button>
+    <button type="button" onclick="getPersonFullName()">函数参数的传递-获取对象属性</button>
+    <button type="button" onclick="getMyFunction()" >通过window使用全局变量</button>
+    <button type="button" onclick="getMyFunction()" onmouseout="alert('鼠标离开了按钮')" onmouseover="alert('鼠标移动到了按钮上')">测试鼠标移动和离开view</button>
+</div>
+<input type="text" name="txt" value="onchange监听内容改变" onchange="alert('输入内容改变了')">
+</body>
+</html>
