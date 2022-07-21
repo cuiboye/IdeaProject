@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>this的使用</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+    <script>
+        /**
+         * 1)forEach方法只在IE8浏览器上支持,如果是嵌入到手机中可以用，没有问题
+         * 2)forEach函数需要一个函数作为参数
+         */
+        var array = ["孙悟空","唐僧","猪八戒","沙悟空"];
+
+        function fun(value){
+            console.log(value);
+        }
+        array.forEach(fun);
+
+        //或者直接添加一个函数,下面3种写法都可以，按需设置
+        //第一个参数是元素，第二个参数是下标索引，第三个元素是对象
+        array.forEach(function (value){
+            console.log("value:"+value);
+        })
+        array.forEach(function (value,index){
+            console.log("index:"+index);
+        })
+        array.forEach(function (value,index,obj){
+            console.log("obj:"+obj);
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>

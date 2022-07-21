@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title>this的使用</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+    <script>
+       /**
+        * 1）call()：可以将对象作为第一个参数，如果还有其他参数需要在对象后面依次添加即可
+        * 2）apply():也可以将对象作为第一个参数，但是如果还有其他参数，需要以数组的方式传递
+        * 上面两种和普通的函数调用没有什么区别，只不过普通函数的this是window，上面两种的this则是对象
+        */
+
+       function play(){
+            console.log(this);//张里的this是window
+       }
+       play();
+
+       function play2(a,b,c){//a,b,c分别代表的是3个参数
+           console.log("a="+a);
+           console.log("b="+b);
+           console.log("c="+c);
+
+           //如果想使用传过来的对象，可以使用this
+           console.log(this.name);//张三
+       }
+
+       var obj = {
+           name:"张三"
+       }
+       play2.call(obj,1,2,3);
+
+
+       function play2(array){//a,b,c分别代表的是3个参数
+           console.log("array="+array);//[1,2,3]
+
+           //如果想使用传过来的对象，可以使用this
+           console.log(this.name);//张三
+       }
+       var obj = {
+           name:"张三"
+       }
+       var array2 = [1,2,3,];
+       play2.call(obj,array2);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

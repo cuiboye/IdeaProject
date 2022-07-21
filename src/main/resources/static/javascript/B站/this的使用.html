@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title>this的使用</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+    <script>
+       /**
+        * 解析器每次在调用函数的时候都会向函数传递一个隐含的参数，这个隐含的参数就是this，this
+        * 指向的是一个对象，这个函数我们成为函数执行的上下文对象，根据函数的调用方式不同，this会指向不同的对象：
+        * 1）以函数的形式调用时，this永远都是window
+        * 2）以方法的形式调用时，this就是调用方法的那个对象
+        */
+       function fun(){
+           console.log(this);//
+       }
+       fun();//this代表的是window
+
+       var obj = {
+         username:"孙悟空",
+         age:fun
+       };
+       obj.age();//this代表的是{username: '孙悟空', age: ?}
+
+       /**
+        * this在全局变量和局部变量中的使用
+        */
+       var name = "全局";
+       function fun2(){
+           console.log(name);
+       }
+       var obj2 = {
+           username:"孙悟空",
+           age:fun2
+       };
+       var obj3 = {
+           username:"沙和尚",
+           age:fun2
+       };
+       fun2();//此时输出结果为"全局"
+
+       //如果想用obj2和obj3调用，分别输出不同的结果"孙悟空"和"沙和尚"，可以使用this如下：
+       function fun3(){
+           console.log(this.username);
+       }
+       var obj4 = {
+           username:"孙悟空",
+           age:fun3
+       };
+       var obj5 = {
+           username:"沙和尚",
+           age:fun3
+       };
+       obj4.age();//孙悟空
+       obj5.age();//沙和尚
+    </script>
+</head>
+<body>
+
+</body>
+</html>

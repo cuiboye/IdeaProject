@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>number的使用</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+    <script>
+        var num = Number.MAX_VALUE;
+        console.log(num);
+        /**
+         * 如果一个数值超过了最大值，会返回一个Infinity，表示正无穷
+         */
+        var num2 = Number.MAX_VALUE * Number.MAX_VALUE;
+        console.log(num2)
+        /**
+         * NaN是一个特殊的number，表示不是一个number
+         */
+        var num3 = "abc" * "bcd";
+        console.log(num3)
+        /**
+         * number使用小数做运算，可能会得到一个不精确的值，所以千万不要使用JS计算一个精确度比较高的运算
+         */
+        var num4 = 0.1 + 0.2;
+        console.log(num4)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

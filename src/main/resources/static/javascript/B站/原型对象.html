@@ -1,0 +1,57 @@
+<html>
+<head>
+    <title>this的使用</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+    <script>
+        /**
+         * 我们所创建的每一个函数，解析器都会向函数中添加一个属性prototype，这个属性对应着一个对象，
+         * 这个对象就是我们所谓的原型对象。
+         * 1）如果函数作为普通函数调用，有和没有是一样的
+         * 2）当函数以构造函数的形式调用时，它所创建的函数中都有一个隐含的属性，指向该构造函数的原型对象
+         *
+         * 原型对象的作用：
+         * 原型对象就相当于一个公共的区域，所有同一个类的实例都可以访问这个原型对象,
+         * 当我们访问对象的属性或方法时，它会现在对象本身中寻找，如果有直接使用，如果没有则在原型对象中寻找
+         */
+
+        function fun(){
+        }
+        var result = new fun();
+        console.log(fun.prototype);
+        console.log(result.__proto__);
+
+        fun.prototype.myname = "原型中的myname";
+        console.log(result.myname);
+
+        result.myname = "对象中的myname";
+        console.log(result.myname);
+
+        //除了添加属性，也可以添加方法
+
+        /**
+         * 使用 in 和 hasOwnProperty
+         * 1）使用 in 检查对象中是否含有某个属性时，如果对象中没有但原型中有，也会返回true
+         * 2）可以使用对象的 hasOwnProperty 检查对象自身有没有某个属性
+         */
+        console.log("myname" in result);//true
+        console.log(result.__proto__.hasOwnProperty("myname1"));//false
+
+        /**
+         * 通过 toString 打印对象的信息
+         */
+        function Animal5(name){
+            this.name = name
+        }
+        var animal5 = new Animal5("小狗");
+        var animal6 = new Animal5("小猫");
+        Animal5.prototype.toString = function () {
+            return "Person[name="+this.name+"]";
+        }
+        console.log(animal5.toString());
+        console.log(animal6.toString());
+    </script>
+</head>
+<body>
+
+</body>
+</html>

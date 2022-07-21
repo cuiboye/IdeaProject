@@ -1,0 +1,73 @@
+<html>
+<head>
+    <title>强制类型转换</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+    <script>
+        /**
+         * 将其他的数据类型转换为string
+         *      方法一：调用转换数据类型的toString()方法
+         *      方法二：使用String()函数操作，将变量作为参数传给String()
+         */
+        //方法一：
+        var num = 123;
+        num.toString();
+        console.log(typeof num);//注意：这个类型输出的还是number类型，不会影响原来的变量
+        console.log(num.toString());
+
+        var b = num.toString();
+        console.log(typeof b);//此时输出类型是string
+        console.log(num.toString());
+
+        var c = null;
+        var d = undefined;
+        // c.toString();//toString()方法操作一个null或者undefined值时，会报错
+
+        //方法二：
+        var e = 123;
+        String(e);//改方法可以操作null和undefined，不会报错
+
+        /**
+         * 将其他的数据类型转换为number，使用Number()函数，将变量作为Number()函数的参数
+         * 方法一：
+         *   ---string转number
+         *      ---如果是数字，则直接转为number
+         *      ---如果含有非数字，则返回NaN
+         *      ---如果字符串是空格，则返回0
+         *   ---boolean转number，固定的
+         *      ---true 转为 1
+         *      ---false转为 0
+         *   ---null转为number
+         *      ---返回0
+         *   ---undefined转number
+         *      返回NaN
+         * 方法二，专门来对付字符串：
+         *   使用parseInt()或者parseFloat可以将字符串中有效的整数或者小转为number
+         */
+        //方法一
+        var f = "456";
+        f = Number(f);
+        console.log(typeof f);//number
+        console.log(f);//456
+        var g = "aaa";
+        g = Number(g);
+        console.log(typeof g);//number
+        console.log(g);//NaN
+
+        //方法二：
+        var h = "123aaa";
+        console.log(Number.parseInt(h));//123
+
+        /**
+         * 其他类型转boolean
+         *   ---number转boolean,number除了0和NaN，其他的都转为true
+         *   ---string转boolean，除了空串""是false，其他(包含空格)的都是true
+         *   ---null和undefined都转为false
+         *   ---对象转boolean，为true
+         *
+         */
+    </script>
+</head>
+<body>
+
+</body>
+</html>

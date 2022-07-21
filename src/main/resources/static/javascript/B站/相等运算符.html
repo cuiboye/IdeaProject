@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>相等运算符</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=gb2312">
+    <script>
+        /**
+         * 1)==比较的是值是否相等,如果两个值类型不同，会自动转为相同的类型再进行比较
+         * 2)===全等比较的是两个值是否相等，它和==类似，不同的是如果两个值类型不同，则直接返回false
+         */
+        var a = 4;
+        console.log(a==1);//false
+        console.log(a==4);//true
+        console.log("1"==1);//true,这里比较特殊，如果两个值类型不相同，会先转为类型相同再做比较
+        console.log(undefined==null);//true，这里也比较特殊，undefined衍生自null，会返回true
+        console.log(NaN==NaN);//false，NaN不和任何值相等，包含它本身
+        //如果想判断一个值是不是NaN，不能用上面的方法，可以使用isNaN()函数
+        var b = NaN;
+        console.log(isNaN(a))//false
+        console.log(isNaN(b))//true
+
+        console.log(null===undefined)//false，不会自动做类型转换
+    </script>
+</head>
+<body>
+
+</body>
+</html>

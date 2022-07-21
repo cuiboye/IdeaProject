@@ -100,6 +100,62 @@ public class UserEntityController {
     }
 
     /**
+     * 挖酒-获取爆款直降的数据
+     */
+    @RequestMapping("/getBaokuanzhijiang")
+    @ResponseBody
+    public String getBaokuanzhijiang(@RequestParam("page") String page) {
+        int pageInt = Integer.valueOf(page);
+        if(pageInt>1){
+            BaokuanzhijiangEntity<Object> baseEntity = new BaokuanzhijiangEntity<>();
+            baseEntity.setStates(200);
+            baseEntity.setMsg("请求成功");
+            BaokuanzhijiangEntity.Result result = new BaokuanzhijiangEntity.Result();
+            List<BaokuanzhijiangEntity.Result.ContentList> list = new ArrayList<>();
+            result.setList(list);
+            baseEntity.setResult(result);
+            return JSONObject.toJSONString(baseEntity);
+        }
+        BaokuanzhijiangEntity<Object> baseEntity = new BaokuanzhijiangEntity<>();
+        baseEntity.setStates(200);
+        baseEntity.setMsg("请求成功");
+
+        List<BaokuanzhijiangEntity.Result.ContentList> list = new ArrayList<>();
+        for(int i=0;i<10;i++){
+            BaokuanzhijiangEntity.Result.ContentList contentList = new BaokuanzhijiangEntity.Result.ContentList();
+            contentList.setProductName("这红酒真好喝");
+            contentList.setBeforePrice("50.00");
+            contentList.setCurrentPrice("40.00");
+            contentList.setDescript("每一箱优惠120.00");
+            contentList.setImageUrl("http://image.59cdn.com/static/upload/image/product/20170614/o_1497428867366.jpg");
+
+            if(i== 0){
+                contentList.setType(0);//马上抢
+            }else if(i== 1){
+                contentList.setType(1);//被包销
+            }else if(i == 2){
+                contentList.setType(2);//已抢光
+            }else if(i == 3){
+                contentList.setType(3);//已售寝
+            }
+
+            List<String> tags = new ArrayList<>();
+            for(int k=0;k<5;k++){
+                tags.add("标签"+k);
+            }
+            contentList.setTags(tags);
+            list.add(contentList);
+        }
+
+        BaokuanzhijiangEntity.Result result = new BaokuanzhijiangEntity.Result();
+        result.setStartTime("1656737103000");
+        result.setList(list);
+
+        baseEntity.setResult(result);
+        return JSONObject.toJSONString(baseEntity);
+    }
+
+    /**
      * 测试版本升级
      */
     @RequestMapping("/checkVersion")
@@ -116,6 +172,26 @@ public class UserEntityController {
         result.setMsg("有新的更新版本");
         result.setType(1);
         result.setUrl("http://image.59cdn.com/app/apk/wajiu_3.70.0.apk");
+
+        baseEntity.setResult(result);
+        return JSONObject.toJSONString(baseEntity);
+    }
+
+    /**
+     * 挖酒-可开发票数据
+     */
+    @RequestMapping("/getFapiao")
+    @ResponseBody
+    public String checkVersion(@RequestParam("index") int index) {
+
+        WajiuFapiaoEntity<Object> baseEntity = new WajiuFapiaoEntity<>();
+        baseEntity.setStates(200);
+        baseEntity.setMsg("请求成功");
+
+        WajiuFapiaoEntity.Result result = new WajiuFapiaoEntity.Result();
+        List<String> list = new ArrayList<>();
+        list.add("ZP2022060720244432659");
+        result.setList(list);
 
         baseEntity.setResult(result);
         return JSONObject.toJSONString(baseEntity);
